@@ -136,7 +136,6 @@ execute_remote_script() {
             send_telegram_message "🟢服务重启成功: $server 用户名: $username 端口: $port 服务: $service"
         fi
         echo "远程执行成功"
-	send_telegram_message "🟢服务重启成功: $server 用户名: $username 端口: $port 服务: $service"
     fi
 }
 
