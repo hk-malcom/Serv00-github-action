@@ -77,6 +77,7 @@ for account in $accounts; do
     echo "正在连接 $username@$ip ..."
     if sshpass -p "$password" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=60 -o ServerAliveInterval=30 -o ServerAliveCountMax=2 -tt "$username@$ip" "sleep 3; exit"; then
         echo "成功激活 $username@$ip"
+	send_telegram_message "serv00激活成功: $username@$ip"
     else
         echo "连接激活 $username@$ip 失败"
         send_telegram_message "serv00激活失败: $username@$ip"
